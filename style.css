@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #D6D6D6;
+    padding-bottom: 90px;
+}
+
+.width {
+    width: 100%;
+    max-width: 776px;
+    padding: 0 20px;
+}
+
+header {
+    width: 100%;
+    height: 368px;
+    background-color: #121214;
+    display: flex;
+    justify-content: center;
+}
+
+header .width h1 {
+    margin: 80px 0 0;
+    color: #FFFFFF;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+header .width p {
+    margin: 24px 0 0;
+    color: #42D3FF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+main form {
+    width: 100%;
+    margin-top: -80px;
+    background-color: #FAFAFC;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+main form .box-content {
+    padding: 64px;
+}
+
+main form h2 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    width: 100%;
+    padding: 0 0 16px;
+    border-bottom: 1px solid #E6E6F0;
+    margin: 0 0 24px;
+}
+
+main form label {
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+main form label small {
+    color: #C1BCCC;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+main form input {
+    width: 100%;
+    min-height: 56px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0 24px;
+}
+
+main form input:focus-visible {
+    outline: #42D3FF auto 1px;
+}
+
+main form textarea {
+    width: 100%;
+    min-height: 168px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0 24px;
+}
+
+main form textarea:focus-visible {
+    outline: #42D3FF auto 1px;
+}
+
+main form select {
+    width: 100%;
+    min-height: 56px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 8px 0 24px;
+}
+
+main form select:focus-visible {
+    outline: #42D3FF auto 1px;
+}
+
+main form .box-check {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+main form .box-check input {
+    width: 24px;
+    height: 24px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+}
+
+main form .box-check p {
+    margin: 0;
+}
+
+main form .dia-hora {
+    display: flex;
+    gap: 20px;
+}
+
+main form .dia-hora .box-data {
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+main form .dia-hora .detal-mobile {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+main form .dia-hora .detal-mobile .box-hora {
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    color: #4E4958;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+main form footer {
+    width: 100%;
+    height: 136px;
+    background-color: #F0F0F4;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 65px;
+}
+
+main form footer input {
+    width: 100%;
+    background-color: #04D361;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    cursor: pointer;
+    transition-duration: .3s;
+}
+
+main form footer input:hover {
+    transform: scale(.97);
+    transition-duration: .3s;
+}
+
+.prop-mt {
+    margin-top: 24px;
+}
+
+@media only screen and (max-width: 600px){
+    main form {
+        padding: 64px 20px;
+    }
+    main form .dia-hora {
+        flex-direction: column;
+    }
+    main form .dia-hora .box-data {
+        width: 100%;
+    }
+    main form .dia-hora .detal-mobile {
+        width: 100%;
+    }
+    main form .dia-hora .box-hora {
+        width: 50%;
+    }
+}

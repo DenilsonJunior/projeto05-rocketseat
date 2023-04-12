@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+    <title>Formulário</title>
+</head>
+<body>
+    <div class="view">
+
+        <header>
+            <div class="width">
+                <h1>Crie e compartilhe<br> seu evento.</h1>
+                <p>O primeiro passo, é preencher esse<br> formulário de inscrição.</p>
+            </div>
+        </header>
+    
+        <main>
+            <div class="width">
+                <form action="" method="" class="view">
+                    <div class="box-content">
+                        <h2 class="title">Informações do Evento</h2>
+                        <label>Título do evento <small>(mínimo 8 caracteres)</small></label>
+                        <input type="text" name="titulo" id="titulo">
+                        <label>Link do evento <small>(comece com https://)</small></label>
+                        <input type="email" name="email" id="email">
+                        <label>Whatsapp para contato <small>(somente números)</small></label>
+                        <input type="number" name="contato" id="contato">
+                        <label>Informações extras</label>
+                        <textarea name="informacoes" id="informacoes"></textarea>
+                        <label>Categoria</label>
+                        <select name="" id="" aria-placeholder="Tipo do evento">
+                            <option value="musica">Música</option>
+                            <option value="filme">Filme</option>
+                            <option value="podcast">Podcast</option>
+                        </select>
+                        
+                        
+                        <h2 class="title prop-mt">Privacidade</h2>
+                        <label>E-mail do administrador <small>(digite um email válido)</small></label>
+                        <input type="email">
+                        <label>Senha de acesso para os participantes <small>(mínimo 8 caracteres)</small></label>
+                        <input type="password">
+                        <div class="box-check">
+                            <input type="checkbox" name="check" id="check">
+                            <label>Evento privado</label>
+                        </div>
+                        
+                        
+                        <h2 class="title prop-mt">Dia e hora</h2>
+                        <div class="dia-hora prop-mt">
+                            <div class="box-data">
+                                <label>Data</label>
+                                <input type="date" name="data" id="data">
+                            </div>
+                            <div class="detal-mobile">
+                                <div class="box-hora">
+                                    <label>Das</label>
+                                    <input type="time" name="inicio" id="inicio" aria-placeholder="19:00">
+                                </div>
+                                <div class="box-hora">
+                                    <label>Até</label>
+                                    <input type="time" name="fim" id="fim" aria-placeholder="20:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer>
+                        <input type="submit" value="Salvar evento">
+                    </footer>
+                </form>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>
