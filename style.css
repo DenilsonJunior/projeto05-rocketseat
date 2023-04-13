@@ -15,6 +15,12 @@ body {
     padding: 0 20px;
 }
 
+main form fieldset .input-wrapper input:focus-visible,
+main form fieldset .input-wrapper textarea:focus-visible,
+main form fieldset select:focus-visible {
+    outline: #42D3FF auto 1px;
+}
+
 header {
     width: 100%;
     height: 368px;
@@ -23,7 +29,7 @@ header {
     justify-content: center;
 }
 
-header .width h1 {
+header h1 {
     margin: 80px 0 0;
     color: #FFFFFF;
     font-family: 'Archivo', sans-serif;
@@ -32,7 +38,7 @@ header .width h1 {
     line-height: 42px;
 }
 
-header .width p {
+header p {
     margin: 24px 0 0;
     color: #42D3FF;
     font-family: 'Poppins', sans-serif;
@@ -59,18 +65,26 @@ main form .box-content {
     padding: 64px;
 }
 
-main form h2 {
+main form fieldset {
     font-family: 'Archivo', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
     width: 100%;
-    padding: 0 0 16px;
-    border-bottom: 1px solid #E6E6F0;
-    margin: 0 0 24px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-main form label {
+main form fieldset legend {
+    width: 100%;
+    border-bottom: 1px solid #E6E6F0;
+    margin: 0 0 24px;
+    padding: 0 0 16px;
+}
+
+main form fieldset .input-wrapper label {
     font-family: 'Poppins', sans-serif;
     color: #4E4958;
     font-weight: 400;
@@ -78,14 +92,20 @@ main form label {
     line-height: 24px;
 }
 
-main form label small {
+main form fieldset .input-wrapper label small {
     color: #C1BCCC;
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
+    transition-duration: .3s;
 }
 
-main form input {
+main form fieldset .input-wrapper label small:hover {
+    color: #4E4958;
+    transition-duration: .3s;
+}
+
+main form fieldset .input-wrapper input {
     width: 100%;
     min-height: 56px;
     background: #FAFAFC;
@@ -97,14 +117,13 @@ main form input {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    margin: 8px 0 24px;
 }
 
-main form input:focus-visible {
-    outline: #42D3FF auto 1px;
+main form fieldset .input-wrapper input:invalid {
+    border: solid red 2px;
 }
 
-main form textarea {
+main form fieldset .input-wrapper textarea {
     width: 100%;
     min-height: 168px;
     background: #FAFAFC;
@@ -116,14 +135,9 @@ main form textarea {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    margin: 8px 0 24px;
 }
 
-main form textarea:focus-visible {
-    outline: #42D3FF auto 1px;
-}
-
-main form select {
+main form fieldset .input-wrapper select {
     width: 100%;
     min-height: 56px;
     background: #FAFAFC;
@@ -135,31 +149,54 @@ main form select {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    margin: 8px 0 24px;
+    cursor: pointer;
 }
 
-main form select:focus-visible {
-    outline: #42D3FF auto 1px;
-}
-
-main form .box-check {
+main form fieldset .input-wrapper .box-check {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 16px;
+    position: relative;
 }
 
-main form .box-check input {
+main form fieldset .input-wrapper .box-check input {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 24px;
     height: 24px;
+    opacity: 0;
+}
+
+main form fieldset .input-wrapper .box-check input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1301_20)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1301_20'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+main form fieldset .input-wrapper .box-check input:focus + label::before {
+    outline: #42D3FF auto 1px;
+}
+
+main form fieldset .input-wrapper .box-check label {
+    margin: 0;
+    display: flex;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+main form fieldset .input-wrapper .box-check label::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    min-height: auto;
     background: #FAFAFC;
     border: 1px solid #E6E6F0;
     border-radius: 8px;
-}
-
-main form .box-check p {
     margin: 0;
+    display: block;
 }
 
 main form .dia-hora {
@@ -200,6 +237,7 @@ main form footer {
     align-items: center;
     justify-content: center;
     padding: 40px 65px;
+    border-top: 1px solid #D6D6D6
 }
 
 main form footer input {
@@ -233,11 +271,17 @@ main form footer input:hover {
     main form .dia-hora {
         flex-direction: column;
     }
+    main form .dia-hora .box-data .input-wrapper {
+        margin: 8px 0 0;
+    }
     main form .dia-hora .box-data {
         width: 100%;
     }
     main form .dia-hora .detal-mobile {
         width: 100%;
+    }
+    main form .dia-hora .detal-mobile .box-hora .input-wrapper {
+        margin: 8px 0 0;
     }
     main form .dia-hora .box-hora {
         width: 50%;
